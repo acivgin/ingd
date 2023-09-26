@@ -1,25 +1,25 @@
 {
-  "name": "ingd-monorepo",
+  "name": "pallet-handling",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "ingd",
-  "sourceRoot": "apps/ingd-monorepo/src",
+  "sourceRoot": "apps/pallet-handling/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/ingd-monorepo",
-        "index": "apps/ingd-monorepo/src/index.html",
-        "main": "apps/ingd-monorepo/src/main.ts",
+        "outputPath": "dist/apps/pallet-handling",
+        "index": "apps/pallet-handling/src/index.html",
+        "main": "apps/pallet-handling/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/ingd-monorepo/tsconfig.app.json",
+        "tsConfig": "apps/pallet-handling/tsconfig.app.json",
         "assets": [
-          "apps/ingd-monorepo/src/favicon.ico",
-          "apps/ingd-monorepo/src/assets"
+          "apps/pallet-handling/src/favicon.ico",
+          "apps/pallet-handling/src/assets"
         ],
-        "styles": ["apps/ingd-monorepo/src/styles.scss"],
+        "styles": ["apps/pallet-handling/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -53,10 +53,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "ingd-monorepo:build:production"
+          "browserTarget": "pallet-handling:build:production"
         },
         "development": {
-          "browserTarget": "ingd-monorepo:build:development"
+          "browserTarget": "pallet-handling:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -64,7 +64,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "ingd-monorepo:build"
+        "browserTarget": "pallet-handling:build"
       }
     },
     "lint": {
@@ -72,8 +72,8 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
-          "apps/ingd-monorepo/**/*.ts",
-          "apps/ingd-monorepo/**/*.html"
+          "apps/pallet-handling/**/*.ts",
+          "apps/pallet-handling/**/*.html"
         ]
       }
     },
@@ -81,7 +81,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/ingd-monorepo/jest.config.ts",
+        "jestConfig": "apps/pallet-handling/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
@@ -94,7 +94,7 @@
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "ingd-monorepo:build"
+        "buildTarget": "pallet-handling:build"
       }
     }
   }

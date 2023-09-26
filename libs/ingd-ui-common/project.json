@@ -1,0 +1,51 @@
+{
+  "name": "ingd-ui-common",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/ingd-ui-common/src",
+  "prefix": "ingd",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/ingd-ui-common/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/ingd-ui-common/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/ingd-ui-common/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/ingd-ui-common/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/ingd-ui-common/**/*.ts",
+          "libs/ingd-ui-common/**/*.html",
+          "libs/ingd-ui-common/package.json"
+        ]
+      }
+    }
+  }
+}

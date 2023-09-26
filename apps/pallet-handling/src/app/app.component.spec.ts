@@ -16,13 +16,13 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Welcome ingd-monorepo'
+      'Welcome pallet-handling'
     );
   });
 
-  it(`should have as title 'ingd-monorepo'`, () => {
+  it(`should have as title 'pallet-handling'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ingd-monorepo');
+    expect(app.title).toEqual('pallet-handling');
   });
 });
