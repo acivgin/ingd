@@ -3,12 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { PalletHandlingRoutingModule } from './pallet-handling-routing.module';
 
-
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    PalletHandlingRoutingModule
-  ]
+  imports: [CommonModule, PalletHandlingRoutingModule],
 })
-export class PalletHandlingModule { }
+export class PalletHandlingModule {}
