@@ -10,20 +10,13 @@
     "importHelpers": true,
     "target": "ES2020",
     "module": "esnext",
-    "lib": [
-      "ES2020",
-      "dom"
-    ],
+    "lib": ["ES2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ingd/auth": [
-        "libs/auth/src/index.ts"
-      ],
-      "@ingd/ui-common": [
-        "libs/ingd-ui-common/src/index.ts"
-      ]
+      "@ingd/auth": ["libs/auth/src/index.ts"],
+      "@ingd/ui-common": ["libs/ingd-ui-common/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
