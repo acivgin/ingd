@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/ingd-ui-common/src",
   "prefix": "ingd",
-  "tags": [],
+  "tags": ["scope:ui-common", "type:ui"],
   "projectType": "library",
   "targets": {
     "build": {
@@ -45,6 +45,53 @@
           "libs/ingd-ui-common/**/*.html",
           "libs/ingd-ui-common/package.json"
         ]
+      }
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "libs/ingd-ui-common/.storybook",
+        "browserTarget": "ingd-ui-common:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/ingd-ui-common",
+        "configDir": "libs/ingd-ui-common/.storybook",
+        "browserTarget": "ingd-ui-common:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "test-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "test-storybook -c libs/ingd-ui-common/.storybook --url=http://localhost:4400"
+      }
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "ingd-ui-common:build-storybook",
+        "staticFilePath": "dist/storybook/ingd-ui-common"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "ingd-ui-common:build-storybook:ci"
+        }
       }
     }
   }

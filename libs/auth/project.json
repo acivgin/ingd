@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/auth/src",
   "prefix": "ingd",
-  "tags": [],
+  "tags": ["scope:authentication", "type:auth"],
   "projectType": "library",
   "targets": {
     "build": {
@@ -45,6 +45,53 @@
           "libs/auth/**/*.html",
           "libs/auth/package.json"
         ]
+      }
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "libs/auth/.storybook",
+        "browserTarget": "auth:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/auth",
+        "configDir": "libs/auth/.storybook",
+        "browserTarget": "auth:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "test-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "test-storybook -c libs/auth/.storybook --url=http://localhost:4400"
+      }
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "auth:build-storybook",
+        "staticFilePath": "dist/storybook/auth"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "auth:build-storybook:ci"
+        }
       }
     }
   }

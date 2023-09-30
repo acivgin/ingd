@@ -16,7 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@ingd/auth": ["libs/auth/src/index.ts"],
-      "@ingd/ui-common": ["libs/ingd-ui-common/src/index.ts"]
+      "@ingd/data-access": ["libs/data-access/src/index.ts"],
+      "@ingd/ui-common": ["libs/ingd-ui-common/src/index.ts"],
+      "@ingd/util": ["libs/util/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
