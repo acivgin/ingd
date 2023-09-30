@@ -1,7 +1,7 @@
 {
-  "name": "ingd-ui-common",
+  "name": "ui-common",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/ingd-ui-common/src",
+  "sourceRoot": "libs/ui-common/src",
   "prefix": "ingd",
   "tags": ["scope:ui-common", "type:ui"],
   "projectType": "library",
@@ -10,14 +10,14 @@
       "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "libs/ingd-ui-common/ng-package.json"
+        "project": "libs/ui-common/ng-package.json"
       },
       "configurations": {
         "production": {
-          "tsConfig": "libs/ingd-ui-common/tsconfig.lib.prod.json"
+          "tsConfig": "libs/ui-common/tsconfig.lib.prod.json"
         },
         "development": {
-          "tsConfig": "libs/ingd-ui-common/tsconfig.lib.json"
+          "tsConfig": "libs/ui-common/tsconfig.lib.json"
         }
       },
       "defaultConfiguration": "production"
@@ -26,7 +26,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/ingd-ui-common/jest.config.ts",
+        "jestConfig": "libs/ui-common/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
@@ -41,9 +41,9 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
-          "libs/ingd-ui-common/**/*.ts",
-          "libs/ingd-ui-common/**/*.html",
-          "libs/ingd-ui-common/package.json"
+          "libs/ui-common/**/*.ts",
+          "libs/ui-common/**/*.html",
+          "libs/ui-common/package.json"
         ]
       }
     },
@@ -51,8 +51,8 @@
       "executor": "@storybook/angular:start-storybook",
       "options": {
         "port": 4400,
-        "configDir": "libs/ingd-ui-common/.storybook",
-        "browserTarget": "ingd-ui-common:build-storybook",
+        "configDir": "libs/ui-common/.storybook",
+        "browserTarget": "ui-common:build-storybook",
         "compodoc": false
       },
       "configurations": {
@@ -65,9 +65,9 @@
       "executor": "@storybook/angular:build-storybook",
       "outputs": ["{options.outputDir}"],
       "options": {
-        "outputDir": "dist/storybook/ingd-ui-common",
-        "configDir": "libs/ingd-ui-common/.storybook",
-        "browserTarget": "ingd-ui-common:build-storybook",
+        "outputDir": "dist/storybook/ui-common",
+        "configDir": "libs/ui-common/.storybook",
+        "browserTarget": "ui-common:build-storybook",
         "compodoc": false
       },
       "configurations": {
@@ -79,18 +79,18 @@
     "test-storybook": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "test-storybook -c libs/ingd-ui-common/.storybook --url=http://localhost:4400"
+        "command": "test-storybook -c libs/ui-common/.storybook --url=http://localhost:4400"
       }
     },
     "static-storybook": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "ingd-ui-common:build-storybook",
-        "staticFilePath": "dist/storybook/ingd-ui-common"
+        "buildTarget": "ui-common:build-storybook",
+        "staticFilePath": "dist/storybook/ui-common"
       },
       "configurations": {
         "ci": {
-          "buildTarget": "ingd-ui-common:build-storybook:ci"
+          "buildTarget": "ui-common:build-storybook:ci"
         }
       }
     }

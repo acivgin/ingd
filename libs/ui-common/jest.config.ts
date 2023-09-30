@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'ingd-ui-common',
+  displayName: 'ui-common',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/libs/ingd-ui-common',
+  coverageDirectory: '../../coverage/libs/ui-common',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
