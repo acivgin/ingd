@@ -1,14 +1,15 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
+import { NxWelcomeComponent } from './nx-welcome.component';
 import { DataAccessModule } from '@ingd/data-access';
-import { AuthModule } from '@ingd/auth';
 import { INGDCommonModule } from '@ingd/ui-common';
+import { AuthModule } from '@ingd/auth';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NxWelcomeComponent],
   imports: [
     BrowserModule,
     DataAccessModule,
@@ -18,6 +19,5 @@ import { INGDCommonModule } from '@ingd/ui-common';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}

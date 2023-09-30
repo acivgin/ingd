@@ -33,14 +33,18 @@
               {
                 "sourceTag": "type:util",
                 "onlyDependOnLibsWithTags": [
-                  "type:util",
                   "type:data"
+                ]
+              },
+              {
+                "sourceTag": "type:data",
+                "onlyDependOnLibsWithTags": [
+                  "type:util"
                 ]
               },
               {
                 "sourceTag": "type:app",
                 "onlyDependOnLibsWithTags": [
-                  "type:app",
                   "type:util",
                   "type:data",
                   "type:ui"
