@@ -4,7 +4,7 @@
   "projectType": "application",
   "prefix": "ingd",
   "sourceRoot": "apps/pallet-handling/src",
-  "tags": [],
+  "tags": ["scope:client", "type:app"],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
@@ -57,7 +57,7 @@
           "vendorChunk": true,
           "extractLicenses": false,
           "sourceMap": true,
-          "namedChunks": true,
+          "namedChunks": true
         }
       },
       "defaultConfiguration": "production"
