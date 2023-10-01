@@ -43,8 +43,7 @@
         "lintFilePatterns": [
           "libs/ui-common/**/*.ts",
           "libs/ui-common/**/*.html",
-          "libs/ui-common/package.json",
-          "libs/ui-common/generators.json"
+          "libs/ui-common/package.json"
         ]
       }
     },
