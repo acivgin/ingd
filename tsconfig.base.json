@@ -18,6 +18,9 @@
       "@ingd/auth": ["libs/auth/src/index.ts"],
       "@ingd/core": ["libs/core/src/index.ts"],
       "@ingd/data-access": ["libs/data-access/src/index.ts"],
+      "@ingd/generators-plugin": [
+        "generators-plugin/src/index.ts"
+      ],
       "@ingd/ui-common": ["libs/ui-common/src/index.ts"],
       "@ingd/util": ["libs/util/src/index.ts"]
     }

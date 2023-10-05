@@ -1,0 +1,34 @@
+stages:
+  - build
+  - test
+  - deploy
+
+# variables:
+#   # Add environment-specific variables here if needed
+#   # Example: MY_API_KEY: "your_api_key_here"
+
+cache:
+  paths:
+    - node_modules/
+    - dist/
+
+before_script:
+  - npm ci
+
+build:
+  stage: build
+  script:
+    - npm run build
+
+test:
+  stage: test
+  script:
+    - npm run test:ci # Replace with your test script/command
+
+deploy:
+  stage: deploy
+  script:
+    - npm install -g @angular/cli
+    - npm run deploy # Replace with your deployment script/command
+  only:
+    - master # You can specify the branch to trigger deployments
