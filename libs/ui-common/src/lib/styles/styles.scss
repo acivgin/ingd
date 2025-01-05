@@ -1,0 +1,16 @@
+@forward './functions';
+@forward './mixins';
+@import '@scania/colour/dist/scss/colour';
+@import '@scania/typography/dist/scss/tokens';
+@import '@scania/typography/dist/scss/mixins';
+
+.tds-btn {
+  &.tds-btn-xs {
+    @include type-style('detail-05');
+    padding: 1rem 2rem 1rem 2rem;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

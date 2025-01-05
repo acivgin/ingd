@@ -3,10 +3,19 @@
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^16.2.0",
-    "@angular/core": "^16.2.0"
+    "@angular/core": "^16.2.0",
+    "@scania/tegel": "^0.0.12",
+    "@scania/tegel-angular-17": "^1.21.1"
   },
   "dependencies": {
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "@scania/components": "^4.0.0",
+    "@scania/icons": "^1.1.1",
+    "@scania/theme-light": "^4.3.0",
+    "@scania/typography": "^1.2.1"
+  },
+  "devDependencies": {
+    "@webcomponents/webcomponentsjs": "^2.6.0"
   },
   "sideEffects": false
 }

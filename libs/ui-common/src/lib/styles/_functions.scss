@@ -1,0 +1,9 @@
+@function high-emphasis($color) {
+  @return rgba($color, 0.87);
+}
+@function medium-emphasis($color) {
+  @return rgba($color, 0.60);
+}
+@function disabled($color) {
+  @return rgba($color, 0.38);
+}
