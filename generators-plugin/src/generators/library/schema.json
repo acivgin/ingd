@@ -12,6 +12,22 @@
         "index": 0
       },
       "x-prompt": "What name would you like to use?"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the library",
+      "x-prompt": "What is the package about?"
+    },
+    "prefix": {
+      "type": "string",
+      "description": "Prefix to apply to the library"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tags to categorize the library"
     }
   },
   "required": ["name"]
